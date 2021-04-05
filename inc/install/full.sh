@@ -1286,6 +1286,7 @@ Veuillez faire un choix : '
     "Guake (Xorg) - [Ubuntu]"
     "Tilix - [Ubuntu]"
     "Tilix - [Fedora]"
+    "StarShip - [Snap]"
     "Powerline - [Ubuntu]"
     "Powerline - [Fedora]"
     )
@@ -1325,6 +1326,14 @@ Veuillez faire un choix : '
     Sur Wayland : env GDK_BACKEND=x11 tilix --quake
     ---
                 '
+                f_break
+                break
+                ;;
+            "StarShip - [Snap]")
+                f_head
+                sudo snap install starship
+                echo 'eval "$(starship init bash)"'
+                cp /tmp/mw_tools/ressources/scripts/configs/starship.toml ~/.config/starship.toml
                 f_break
                 break
                 ;;
