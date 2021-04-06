@@ -4,15 +4,15 @@ function f_update {
 if [ "$OS" == "ubuntu" ]; then
     # Update Ubuntu
     sudo apt install -y git subversion curl
-    sudo apt update && sudo apt upgrade && sudo apt dist-upgrade
+    sudo apt update && sudo apt upgrade && sudo apt full-upgrade
     sudo snap refresh
     flatpak update
 elif [ "$OS" == "fedora" ]; then
     # Update Fedora
     sudo dnf install -y git subversion curl
     sudo sudo dnf upgrade && sudo dnf distro-sync
-    #sudo snap refresh
     flatpak update
+    sudo snap refresh
 fi
 
 }
