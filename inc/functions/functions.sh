@@ -19,7 +19,10 @@ function f_theme_default {
 
 function f_break {
 
-if !hash cowsasy 2>/dev/null; then
+if hash cowsay 2>/dev/null; then
+echo '
+'
+else
     if [ "$OS" == "ubuntu" ]; then
         sudo apt install cowsay -y
     elif [ "$OS" == "fedora" ]; then
@@ -27,9 +30,7 @@ if !hash cowsasy 2>/dev/null; then
     fi
 fi
 
-echo '
-'
-if hash cowsasy 2>/dev/null; then
+if hash cowsay 2>/dev/null; then
     cowsay -f bunny "${mwmessage}Appuyer sur la touche ENTREE pour continuer ..."
     read -e -i "" -p "" choice
 else
