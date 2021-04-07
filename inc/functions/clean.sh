@@ -19,13 +19,14 @@ if [ "$OS" == "ubuntu" ]; then
     sudo apt update && sudo apt upgrade && sudo apt full-upgrade
     sudo snap refresh
     flatpak update
-    cowsay -f dragon-and-cow "Votre PC est à jour !"
+    cowsay -f bud-frogs "Votre PC est à jour !"
 elif [ "$OS" == "fedora" ]; then
     # Update Fedora
     sudo dnf install -y git subversion curl cowsay
     sudo sudo dnf upgrade && sudo dnf distro-sync
     flatpak update
     sudo snap refresh
+    cowsay -f bud-frogs "Votre PC est à jour !"
 fi
 
 }
@@ -62,12 +63,7 @@ flatpak uninstall --unused
 flatpak uninstall --delete-data -y
 # sudo rm -rf /tmp/*
 # find ~/ -type d \( ! -name .protonvpn-cli \) -prune -o -name '*~' -exec rm {} \;
-echo "
----
-
-Le PC est propre ;-)
-
----"
+cowsay -f bud-frogs "Le PC est propre ;-)"
 
 elif [ "$OS" == "fedora" ]; then
 # Clean Fedora
@@ -89,12 +85,7 @@ find ~/ -type d -iname '*~' -exec rm {} \;
 # find ~/ -name '*~' -print0 | xargs rm -Rf
 flatpak uninstall --unused
 flatpak uninstall --delete-data -y
-echo "
----
-
-Le PC est propre ;-)
-
----"
+cowsay -f bud-frogs "Le PC est propre ;-)"
 fi
 
 }
