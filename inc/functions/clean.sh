@@ -13,16 +13,13 @@ if [ "$OS" == "ubuntu" ]; then
     if ! dpkg -s 'curl' >/dev/null 2>&1; then
         sudo apt install curl -y
     fi
-    if ! dpkg -s 'cowsay' >/dev/null 2>&1; then
-        sudo apt install cowsay -y
-    fi
     sudo apt update && sudo apt upgrade && sudo apt full-upgrade
     sudo snap refresh
     flatpak update
     mwmessage="Votre PC est à jour ! "
 elif [ "$OS" == "fedora" ]; then
     # Update Fedora
-    sudo dnf install -y git subversion curl cowsay
+    sudo dnf install -y git subversion curl
     sudo sudo dnf upgrade && sudo dnf distro-sync
     flatpak update
     sudo snap refresh

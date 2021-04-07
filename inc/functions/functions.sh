@@ -18,8 +18,22 @@ function f_theme_default {
 }
 
 function f_break {
+
+if hash cowsasy 2>/dev/null; then
+else
+    if [ "$OS" == "ubuntu" ]; then
+        sudo apt install cowsay -y
+    elif [ "$OS" == "fedora" ]; then
+        sudo dnf install -y cowsay
+    fi
+fi
+
 echo '
 '
-cowsay -f bunny "${mwmessage}Appuyer sur la touche ENTREE pour continuer ..."
-read -e -i "" -p "" choice
+if hash cowsasy 2>/dev/null; then
+    cowsay -f bunny "${mwmessage}Appuyer sur la touche ENTREE pour continuer ..."
+    read -e -i "" -p "" choice
+else
+    read -e -i "" -p "${mwmessage}Appuyer sur la touche ENTREE pour continuer ..." choice
+fi
 }
