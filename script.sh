@@ -2,6 +2,7 @@
 # mwdate=$(curl https://api.github.com/repos/jsigma/mw_tools/commits/master 2>&1 | grep '"date"' | tail -n 1 | cut -c16-25)
 # echo "date:$mwdate" > /tmp/mw_tools/config
 # Update : $(cat /tmp/mw_tools/config | grep 'date:' | cut -c6-15)"
+mwmessage=""
 mwdate="2021-04-07"
 
 cp /tmp/mw_tools/tools.sh ~/tools.sh
