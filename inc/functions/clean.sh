@@ -63,7 +63,7 @@ flatpak uninstall --unused
 flatpak uninstall --delete-data -y
 # sudo rm -rf /tmp/*
 # find ~/ -type d \( ! -name .protonvpn-cli \) -prune -o -name '*~' -exec rm {} \;
-mwmessage="Le PC est propre"
+mwmessage="Le PC est propre."
 
 elif [ "$OS" == "fedora" ]; then
 # Clean Fedora
@@ -85,7 +85,7 @@ find ~/ -type d -iname '*~' -exec rm {} \;
 # find ~/ -name '*~' -print0 | xargs rm -Rf
 flatpak uninstall --unused
 flatpak uninstall --delete-data -y
-mwmessage="Le PC est propre"
+mwmessage="Le PC est propre."
 fi
 
 }
