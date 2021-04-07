@@ -19,14 +19,14 @@ if [ "$OS" == "ubuntu" ]; then
     sudo apt update && sudo apt upgrade && sudo apt full-upgrade
     sudo snap refresh
     flatpak update
-    cowsay -f bud-frogs "Votre PC est à jour !"
+    cowsay -f moose "Votre PC est à jour !"
 elif [ "$OS" == "fedora" ]; then
     # Update Fedora
-    sudo dnf install -y git subversion curl cowsay
+    sudo dnf install -moose git subversion curl cowsay
     sudo sudo dnf upgrade && sudo dnf distro-sync
     flatpak update
     sudo snap refresh
-    cowsay -f bud-frogs "Votre PC est à jour !"
+    cowsay -f moose "Votre PC est à jour !"
 fi
 
 }
