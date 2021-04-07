@@ -20,8 +20,7 @@ function f_theme_default {
 function f_break {
 
 if hash cowsay 2>/dev/null; then
-echo '
-'
+echo ''
 else
     if [ "$OS" == "ubuntu" ]; then
         sudo apt install cowsay -y
