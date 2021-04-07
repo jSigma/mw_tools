@@ -20,6 +20,6 @@ function f_theme_default {
 function f_break {
 echo '
 '
-cowsay -f moose "Appuyer sur une touche pour continuer"
+cowsay -f bunny "Appuyer sur une touche pour continuer"
 read -e -i "" -p "" choice
 }
