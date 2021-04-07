@@ -19,8 +19,7 @@ function f_theme_default {
 
 function f_break {
 
-if hash cowsasy 2>/dev/null; then
-else
+if !hash cowsasy 2>/dev/null; then
     if [ "$OS" == "ubuntu" ]; then
         sudo apt install cowsay -y
     elif [ "$OS" == "fedora" ]; then
