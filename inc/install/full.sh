@@ -502,6 +502,7 @@ function app_firefox {
 Veuillez faire un choix : '
     options=(
     "Retour"
+    "Firefox - [Ubuntu]"
     "Firefox Beta - [Ubuntu]"
     "Firefox Nightly - [Ubuntu]"
     "Firefox Beta (Désinstaller) - [Ubuntu]"
@@ -536,7 +537,9 @@ Veuillez faire un choix : '
             "Firefox Beta - [Ubuntu]")
                 f_head
                 sudo add-apt-repository ppa:mozillateam/firefox-next
-                sudo apt update && sudo apt install firefox
+                sudo apt update
+                sudo apt install firefox
+                sudo apt-get install firefox-locale-fr
                 f_break
                 break
                 ;;
