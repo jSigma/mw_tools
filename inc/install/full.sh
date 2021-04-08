@@ -502,7 +502,11 @@ function app_firefox {
 Veuillez faire un choix : '
     options=(
     "Retour"
+    "Firefox Beta - [Ubuntu]"
     "Firefox Nightly - [Ubuntu]"
+    "Firefox Beta (Désinstaller) - [Ubuntu]"
+    "Firefox Nightly (Désinstaller) - [Ubuntu]"
+    "Firefox beta - [Flatpak]"
     )
 
     select opt in "${options[@]}"
@@ -517,9 +521,29 @@ Veuillez faire un choix : '
                 f_break
                 break
                 ;;
-            "Firefox beta - [Snap]")
+            # "Firefox beta - [Snap]")
+            #     f_head
+            #     sudo snap install firefox --beta
+            #     f_break
+            #     break
+            #     ;;
+            "Firefox - [Ubuntu]")
                 f_head
-                sudo snap install firefox --beta
+                sudo apt update && sudo apt install firefox
+                f_break
+                break
+                ;;
+            "Firefox Beta - [Ubuntu]")
+                f_head
+                sudo add-apt-repository ppa:mozillateam/firefox-next
+                sudo apt update && sudo apt install firefox
+                f_break
+                break
+                ;;
+            "Firefox Beta (Désinstaller) - [Ubuntu]")
+                f_head
+                sudo add-apt-repository --remove ppa:mozillateam/firefox-next
+                sudo apt autoremove --purge firefox
                 f_break
                 break
                 ;;
@@ -529,6 +553,14 @@ Veuillez faire un choix : '
                 sudo apt-get update
                 sudo apt-get install firefox-trunk
                 sudo apt-get install firefox-trunk-locale-fr
+                f_break
+                break
+                ;;
+            "Firefox Nightly (Désinstaller) - [Ubuntu]")
+                f_head
+                sudo add-apt-repository --remove ppa:ubuntu-mozilla-daily/ppa
+                sudo apt-get autoremove --purge firefox-trunk
+                sudo apt-get autoremove --purge firefox-trunk-locale-fr
                 f_break
                 break
                 ;;
