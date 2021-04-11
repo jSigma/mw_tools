@@ -11,12 +11,12 @@ Veuillez faire un choix : '
     "Atom"
     "Audacity"
     "Bitwarden"
+    "Capture Image/Vidéo"
     "Chromium"
     "Detwinner (Duplicate)"
     "Developpement"
     "Filezilla"
     "Firefox"
-    "Flameshot"
     "Github Desktop"
     "Krita"
     "LibreOffice"
@@ -30,7 +30,6 @@ Veuillez faire un choix : '
     "Piper (souris)"
     "Plex Player"
     "ProtonVPN"
-    "SimpleScreenRecorder"
     "Skype"
     "SpeedTest"
     "Spotify"
@@ -79,6 +78,11 @@ Veuillez faire un choix : '
             "Bitwarden")
                 f_head
                 app_bitwarden
+                break
+                ;;
+            "Capture Image/Vidéo")
+                f_head
+                app_capture
                 break
                 ;;
             "Chromium")
