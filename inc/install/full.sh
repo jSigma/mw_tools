@@ -411,6 +411,67 @@ Veuillez faire un choix : '
 }
 
 ##############################
+# Captures
+##############################
+function app_capture {
+    PS3='
+Veuillez faire un choix : '
+    options=(
+    "Retour"
+    "Flameshot - [Ubuntu]"
+    "Flameshot - [Fedora]"
+    "SimpleScreenRecorder - [Snap]"
+    "Kooha - [Flatpak]"
+    )
+
+    select opt in "${options[@]}"
+    do
+        case $opt in
+            "Retour")
+                break
+                ;;
+            "Flameshot - [Ubuntu]")
+                f_head
+                sudo apt install flameshot
+                f_break
+                break
+                ;;
+            "Flameshot - [Fedora]")
+                f_head
+                sudo dnf install flameshot
+                f_break
+                break
+                ;;
+            "Flameshot - [Snap]")
+                f_head
+                sudo snap install flameshot
+                f_break
+                break
+                ;;
+            "Flameshot - [Flatpak]")
+                f_head
+                flatpak install flathub org.flameshot.Flameshot
+                f_break
+                break
+                ;;
+            "SimpleScreenRecorder - [Snap]")
+                f_head
+                sudo snap install simplescreenrecorder
+                f_break
+                break
+                ;;
+            "Kooha - [Flatpak]")
+                f_head
+                flatpak install flathub io.github.seadve.Kooha
+                f_break
+                break
+                ;;
+            *) echo "invalid option $REPLY";;
+        esac
+    done
+}
+
+##############################
 # Chromium
 ##############################
 function app_chromium {
@@ -564,41 +625,6 @@ Veuillez faire un choix : '
                 sudo add-apt-repository --remove ppa:ubuntu-mozilla-daily/ppa
                 sudo apt-get autoremove --purge firefox-trunk
                 sudo apt-get autoremove --purge firefox-trunk-locale-fr
-                f_break
-                break
-                ;;
-            *) echo "invalid option $REPLY";;
-        esac
-    done
-}
-
-##############################
-# Flameshot
-##############################
-function app_flameshot {
-    PS3='
-Veuillez faire un choix : '
-    options=(
-    "Retour"
-    "Flameshot - [Ubuntu]"
-    "Flameshot - [Fedora]"
-    )
-
-    select opt in "${options[@]}"
-    do
-        case $opt in
-            "Retour")
-                break
-                ;;
-            "Flameshot - [Ubuntu]")
-                f_head
-                sudo apt install flameshot
-                f_break
-                break
-                ;;
-            "Flameshot - [Fedora]")
-                f_head
-                sudo dnf install flameshot
                 f_break
                 break
                 ;;
@@ -1097,34 +1123,6 @@ Veuillez faire un choix : '
             "PO Gtranslator- [Flatpak]")
                 f_head
                 flatpak install flathub org.gnome.Gtranslator
-                f_break
-                break
-                ;;
-            *) echo "invalid option $REPLY";;
-        esac
-    done
-}
-
-##############################
-# SimpleScreenRecorder
-##############################
-function app_simplescreenrecorder {
-    PS3='
-Veuillez faire un choix : '
-    options=(
-    "Retour"
-    "SimpleScreenRecorder - [Snap]"
-    )
-
-    select opt in "${options[@]}"
-    do
-        case $opt in
-            "Retour")
-                break
-                ;;
-            "SimpleScreenRecorder - [Snap]")
-                f_head
-                sudo snap install simplescreenrecorder
                 f_break
                 break
                 ;;

@@ -3,7 +3,7 @@
 # echo "date:$mwdate" > /tmp/mw_tools/config
 # Update : $(cat /tmp/mw_tools/config | grep 'date:' | cut -c6-15)"
 mwmessage=""
-mwdate="2021-04-07"
+mwdate="2021-04-11"
 
 cp /tmp/mw_tools/tools.sh ~/tools.sh
 chmod +x ~/tools.sh
