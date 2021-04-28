@@ -84,6 +84,7 @@ options=(
 "Backgrounds"
 "Firefox Launcher light"
 "Firefox-trunk Launcher light"
+"LibreOffice Flatpak Launcher light"
 "Supprimer Imprimante cups-browsed"
 )
 select opt in "${options[@]}"
