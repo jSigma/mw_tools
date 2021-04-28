@@ -1,5 +1,6 @@
 [/]
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom9/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom10/']
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom9/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom10/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom12/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8/']
+terminal=['<Primary><Alt>t']
 
 [custom-keybindings/custom0]
 binding='<Primary>Page_Up'
@@ -16,8 +17,13 @@ binding='<Primary><Alt>parenleft'
 command="sh -c '~/.mw_tools/themes/theme-5.sh'"
 name='Thème 5'
 
+[custom-keybindings/custom12]
+binding='<Primary>twosuperior'
+command='sh -c "sleep 0.5 && xdotool key ctrl+shift+l"'
+name='Bitwarden'
+
 [custom-keybindings/custom2]
-binding='<Primary>F1'
+binding='<Primary><Shift>F1'
 command='flameshot gui -p /home/jsigma/Images/Captures'
 name='Flameshot'
 
@@ -47,9 +53,9 @@ command='tilix --quake'
 name='Tilix Guake'
 
 [custom-keybindings/custom8]
-binding='<Alt><Super>c'
-command="sh -c '~/.mw_tools/conky.sh'"
-name='conky'
+binding='<Primary>F1'
+command='flatpak run org.flameshot.Flameshot gui'
+name='Flameshot'
 
 [custom-keybindings/custom9]
 binding='<Primary><Alt>apostrophe'

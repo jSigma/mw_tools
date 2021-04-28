@@ -1,77 +1,4 @@
 #!/bin/bash
-function f_tools_firefox {
-    rm ~/.local/share/applications/firefox.desktop
-    touch ~/.local/share/applications/firefox.desktop
-
-    echo "[Desktop Entry]
-    Version=1.0
-    Name=Firefox Web Browser
-    Name[fr]=Navigateur Web Firefox
-    Comment=Browse the World Wide Web
-    Comment[fr]=Naviguer sur le Web
-    GenericName=Web Browser
-    GenericName[fr]=Navigateur Web
-    Keywords=Internet;WWW;Browser;Web;Explorer
-    Keywords[fr]=Internet;WWW;Browser;Web;Explorer;Fureteur;Surfer;Navigateur
-    Exec=bash -c 'env GTK_THEME=Yaru-light firefox %u'
-    Terminal=false
-    X-MultipleArgs=false
-    Type=Application
-    Icon=firefox
-    Categories=GNOME;GTK;Network;WebBrowser;
-    MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;x-scheme-handler/chrome;video/webm;application/x-xpinstall;
-    StartupNotify=true
-    Actions=new-window;new-private-window;
-
-    [Desktop Action new-window]
-    Name=Open a New Window
-    Name[fr]=Ouvrir une nouvelle fenêtre
-    Exec=bash -c 'env GTK_THEME=Yaru-light firefox -new-window %u'
-
-    [Desktop Action new-private-window]
-    Name=Open a New Private Window
-    Name[fr]=Ouvrir une nouvelle fenêtre de navigation privée
-    Exec=bash -c 'env GTK_THEME=Yaru-light firefox -private-window %u'
-    " >> ~/.local/share/applications/firefox.desktop
-}
-
-function f_tools_firefox-trunk {
-    rm ~/.local/share/applications/firefox-trunk.desktop
-    touch ~/.local/share/applications/firefox-trunk.desktop
-
-    echo "[Desktop Entry]
-    Version=1.0
-    Name=Firefox Nightly Web Browser
-    Name[fr]=Firefox Navigateur Web Nightly
-    Comment=Browse the World Wide Web
-    Comment[fr]=Naviguer sur le Web
-    GenericName=Web Browser
-    GenericName[fr]=Navigateur Web
-    Keywords=Internet;WWW;Browser;Web;Explorer
-    Keywords[fr]=Internet;WWW;Browser;Web;Explorer;Fureteur;Surfer;Navigateur
-    Exec=bash -c 'env GTK_THEME=Yaru-light firefox-trunk %u'
-    Terminal=false
-    X-MultipleArgs=false
-    Type=Application
-    Icon=firefox-trunk
-    Categories=GNOME;GTK;Network;WebBrowser;
-    MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;x-scheme-handler/chrome;video/webm;application/x-xpinstall;
-    StartupNotify=true
-    Actions=new-window;new-private-window;
-    StartupWMClass=Nightly
-
-    [Desktop Action new-window]
-    Name=Open a New Window
-    Name[fr]=Ouvrir une nouvelle fenêtre
-    Exec=bash -c 'env GTK_THEME=Yaru-light firefox-trunk -new-window %u'
-
-    [Desktop Action new-private-window]
-    Name=Open a New Private Window
-    Name[fr]=Ouvrir une nouvelle fenêtre de navigation privée
-    Exec=bash -c 'env GTK_THEME=Yaru-light firefox-trunk -private-window %u'
-    " >> ~/.local/share/applications/firefox-trunk.desktop
-}
-
 function f_tools_sgc {
 
 PS3='
@@ -85,7 +12,7 @@ options=(
 "Firefox Launcher light"
 "Firefox-trunk Launcher light"
 "LibreOffice Flatpak Launcher light"
-"Supprimer Imprimante cups-browsed"
+# "Supprimer Imprimante cups-browsed"
 )
 select opt in "${options[@]}"
 do
@@ -131,12 +58,12 @@ do
             ;;
         "Firefox Launcher light")
             clear
-            f_tools_firefox
+            cp /tmp/mw_tools/ressources/applications/firefox.d* ~/.local/share/applications
             break
             ;;
         "Firefox-trunk Launcher light")
             clear
-            f_tools_firefox-trunk
+            cp /tmp/mw_tools/ressources/applications/firefox-trunk* ~/.local/share/applications
             break
             ;;
         "LibreOffice Flatpak Launcher light")
@@ -144,11 +71,11 @@ do
             cp /tmp/mw_tools/ressources/applications/org.libreoffice* ~/.local/share/applications
             break
             ;;
-        "Supprimer Imprimante cups-browsed")
-            clear
-            sudo apt-get purge --autoremove cups-browsed
-            break
-            ;;
+        # "Supprimer Imprimante cups-browsed")
+        #     clear
+        #     sudo apt-get purge --autoremove cups-browsed
+        #     break
+        #     ;;
     esac
 done
 

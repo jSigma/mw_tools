@@ -3,7 +3,7 @@
 # echo "date:$mwdate" > /tmp/mw_tools/config
 # Update : $(cat /tmp/mw_tools/config | grep 'date:' | cut -c6-15)"
 mwmessage=""
-mwdate="2021-04-11"
+mwdate="2021-04-28"
 
 cp /tmp/mw_tools/tools.sh ~/tools.sh
 chmod +x ~/tools.sh
@@ -28,8 +28,9 @@ fi
 clear
 
 PAGE="GitHub : https://github.com/jsigma/mw_tools
-Compatibility : Ubuntu 20+ / Fedora 32+"
-head_page="Update : ${mwdate}"
+Compatibility : Ubuntu 20+ / Fedora 32+
+Update : ${mwdate}"
+head_page=""
 
 PWD=/tmp/mw_tools
 
