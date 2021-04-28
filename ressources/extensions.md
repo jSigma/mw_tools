@@ -60,7 +60,7 @@ https://extensions.gnome.org/extension/615/appindicator-support/
 Displays Internet Speed  
 https://extensions.gnome.org/extension/104/netspeed/
 
-#### etwork Speed
+#### Network Speed
 Highly customizable Network Speed Monitor.  
 https://extensions.gnome.org/extension/3896/network-speed/
 
