@@ -138,6 +138,11 @@ do
             f_tools_firefox-trunk
             break
             ;;
+        "LibreOffice Flatpak Launcher light")
+            clear
+            cp /tmp/mw_tools/ressources/applications/org.libreoffice* ~/.local/share/applications
+            break
+            ;;
         "Supprimer Imprimante cups-browsed")
             clear
             sudo apt-get purge --autoremove cups-browsed
