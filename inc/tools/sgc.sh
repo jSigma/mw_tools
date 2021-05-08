@@ -8,6 +8,8 @@ options=(
 "Themes"
 "keybindings Dump"
 "keybindings Load"
+"Tilix Dump"
+"Tilix Load"
 "Backgrounds"
 "Firefox Launcher light"
 "Firefox-trunk Launcher light"
@@ -43,6 +45,20 @@ do
             clear
             dconf load /org/gnome/desktop/wm/keybindings/ < /tmp/mw_tools/ressources/scripts/keybindings/wm-keybindings.dconf.bak
             dconf load /org/gnome/settings-daemon/plugins/media-keys/ < /tmp/mw_tools/ressources/scripts/keybindings/media-keys-keybindings.dconf.bak
+            break
+            ;;
+        "Tilix Dump")
+            clear
+            mkdir ~/.mw_tools
+            mkdir ~/.mw_tools/config
+            rm -r ~/.mw_tools/config/*
+            clear
+            dconf dump /com/gexperts/Tilix/ > ~/.mw_tools/config/tilix.dconf.bak
+            break
+            ;;
+        "Tilix Load")
+            clear
+            dconf load /com/gexperts/Tilix/ < /tmp/mw_tools/ressources/scripts/configs/tilix.dconf.bak
             break
             ;;
         "Backgrounds")
