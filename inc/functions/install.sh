@@ -31,6 +31,7 @@ Veuillez faire un choix : '
     "Plex Player"
     "ProtonVPN"
     "Skype"
+    "SongRec"
     "SpeedTest"
     "Spotify"
     "Stacer"
@@ -193,6 +194,11 @@ Veuillez faire un choix : '
             "Skype")
                 f_head
                 app_skype
+                break
+                ;;
+            "SongRec")
+                f_head
+                app_songrec
                 break
                 ;;
             "SpeedTest")

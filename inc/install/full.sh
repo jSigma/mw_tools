@@ -1613,3 +1613,31 @@ Veuillez faire un choix : '
         esac
     done
 }
+
+##############################
+# SongRec
+##############################
+function app_songrec {
+    PS3='
+Veuillez faire un choix : '
+    options=(
+    "Retour"
+    "SongRec - [Flatpak]"
+    )
+
+    select opt in "${options[@]}"
+    do
+        case $opt in
+            "Retour")
+                break
+                ;;
+            "SongRec - [Flatpak]")
+                f_head
+                flatpak install flathub com.github.marinm.songrec
+                f_break
+                break
+                ;;
+            *) echo "invalid option $REPLY";;
+        esac
+    done
+}
